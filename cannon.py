@@ -22,6 +22,9 @@ targets = []
 """Creamos el cambio de colores. Autor: Javier J.P."""
 color1 = random.choice(['purple', 'green', 'yellow', 'brown'])
 
+"""Creamos otro cambio de colores. Autor: Javier J.P."""
+color2 = random.choice(['red', 'cian', 'pink', 'blue'])
+
 def tap(x, y):
     """Respond to screen tap."""
     if not inside(ball):
@@ -45,14 +48,14 @@ def draw():
 
     for target in targets:
         goto(target.x, target.y)
-        """Cambio de forma y agregamos el color de los objetivos. Autor: Javier J.P."""
-        color(color1)
-        stamp()
+        """Cambio de color de los objetivos. Autor: Javier J.P."""
+        dot(20, color1)
 
     if inside(ball):
         goto(ball.x, ball.y)
-        """Cambio de color de los balones"""
-        dot(6, color1)
+        """Cambio de color y de forma de los balones. Autor: Javier J.P."""
+        color(color2)
+        stamp()
 
     update()
 
