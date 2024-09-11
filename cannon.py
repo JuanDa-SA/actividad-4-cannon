@@ -54,8 +54,10 @@ def move():
         target = vector(200, y)
         targets.append(target)
 
+
+    """Cambia la velocidad de los objetivos. Autor: Alberto"""
     for target in targets:
-        target.x -= 0.5
+        target.x -= 2
 
     if inside(ball):
         speed.y -= 0.35
@@ -75,7 +77,9 @@ def move():
         if not inside(target):
             target.x = 200
 
-    ontimer(move, 50)
+
+    """Cambia la velocidad de todo el juego (proyectil y objetivos). Autor: Alberto"""
+    ontimer(move, 20)
 
 
 setup(420, 420, 370, 0)
