@@ -8,6 +8,8 @@ Exercises
 4. Change the speed of the ball.
 """
 
+"""Importamos libreria para el cambio de colores. Autor: Javier J.P."""
+import random 
 from random import randrange
 from turtle import *
 
@@ -17,6 +19,8 @@ ball = vector(-200, -200)
 speed = vector(0, 0)
 targets = []
 
+"""Creamos el cambio de colores. Autor: Javier J.P."""
+color1 = random.choice(['purple', 'green', 'yellow', 'brown'])
 
 def tap(x, y):
     """Respond to screen tap."""
@@ -35,14 +39,20 @@ def inside(xy):
 def draw():
     """Draw ball and targets."""
     clear()
+    
+    """Creamos el cambio de forma de los proyectiles. Autor:Javier J.P."""
+    shape('square')
 
     for target in targets:
         goto(target.x, target.y)
-        dot(20, 'blue')
+        """Cambio de forma y agregamos el color de los objetivos. Autor: Javier J.P."""
+        color(color1)
+        stamp()
 
     if inside(ball):
         goto(ball.x, ball.y)
-        dot(6, 'red')
+        """Cambio de color de los balones"""
+        dot(6, color1)
 
     update()
 
